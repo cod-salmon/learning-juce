@@ -109,13 +109,7 @@ The GUI for the logging page gets setup during the construction of the `MainCont
 In any case, all `handleIncomingMidiMessage`, `handleNoteOn` or `handleNoteOff` will build a message and pass this onto `postMessageToList`, together with a string specifying the "source" (on-screen keyboard or some input MIDI keyboard). 
 
 ### `postMessageToList`
-This method creates a new `IncomingMessageCallback` instance with the input message and source, and immediately calls its internal `post` method. `messageCallback` is triggered once `post` is done dispatching the message. The `messageCallback` method has been implemented so that to call `MainContentComponent::addMessageToList`, which simply reformats the input `message` and wraps it inside a `juce::String` which is then passed onto `logMessage`. Finally, `logMessage` takes the input message on `juce::String` format and inserts it at the caret position [^1].
-
-
-
-
-
-[^1] The `juce::TextEditor` class contains some methods which talk about a "caret". The "caret" on the `juce::TextEditor` class is used as a marker where the text editor is meant to write new text. It is the same as the pulsing vertical line that you see when you type on your computer. 
+This method creates a new `IncomingMessageCallback` instance with the input message and source, and immediately calls its internal `post` method. `messageCallback` is triggered once `post` is done dispatching the message. The `messageCallback` method has been implemented so that to call `MainContentComponent::addMessageToList`, which simply reformats the input `message` and wraps it inside a `juce::String` which is then passed onto `logMessage`. Finally, `logMessage` takes the input message on `juce::String` format and inserts it at the caret position. **Note**: The `juce::TextEditor` class contains some methods which talk about a "caret". The "caret" on the `juce::TextEditor` class is used as a marker where the text editor is meant to write new text. It is the same as the pulsing vertical line that you see when you type on your computer. 
 
 
 
