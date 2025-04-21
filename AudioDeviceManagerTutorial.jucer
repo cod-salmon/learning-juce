@@ -2,7 +2,8 @@
 
 <JUCERPROJECT name="AudioDeviceManagerTutorial" companyName="JUCE" version="1.0.0"
               userNotes="Explores features of the audio device manager." companyWebsite="http://juce.com"
-              projectType="guiapp" useAppConfig="0" addUsingNamespaceToJuceHeader="1">
+              projectType="guiapp" useAppConfig="0" addUsingNamespaceToJuceHeader="1"
+              id="CHo299" jucerFormatVersion="1">
   <MAINGROUP id="Jd7y3K" name="AudioDeviceManagerTutorial">
     <GROUP id="{A8F18A2C-DC0D-5B9F-1565-EC1D97047185}" name="Source">
       <FILE id="S9FRAl" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
@@ -100,7 +101,8 @@
         <MODULEPATH id="juce_gui_extra" path=""/>
       </MODULEPATHS>
     </XCODE_IPHONE>
-    <ANDROIDSTUDIO targetFolder="Builds/Android" androidBluetoothNeeded="1">
+    <ANDROIDSTUDIO targetFolder="Builds/Android" androidBluetoothScanNeeded="1"
+                   androidBluetoothAdvertiseNeeded="1" androidBluetoothConnectNeeded="1">
       <CONFIGURATIONS>
         <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="AudioDeviceManagerTutorial"/>
         <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="AudioDeviceManagerTutorial"/>
