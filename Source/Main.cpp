@@ -7,7 +7,7 @@
 */
 
 #include <JuceHeader.h>
-#include "HandlingMidiEventsTutorial.h"
+#include "SynthDecibelLevelControlTutorial.h"
 
 class Application    : public juce::JUCEApplication
 {
@@ -15,12 +15,12 @@ public:
     //==============================================================================
     Application() = default;
 
-    const juce::String getApplicationName() override       { return "HandlingMidiEventsTutorial"; }
+    const juce::String getApplicationName() override       { return "SynthDecibelLevelControlTutorial"; }
     const juce::String getApplicationVersion() override    { return "1.0.0"; }
 
     void initialise (const juce::String&) override
     {
-        mainWindow.reset (new MainWindow ("HandlingMidiEventsTutorial", new MainContentComponent, *this));
+        mainWindow.reset (new MainWindow ("SynthDecibelLevelControlTutorial", new MainContentComponent, *this));
     }
 
     void shutdown() override                         { mainWindow = nullptr; }
