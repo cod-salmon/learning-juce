@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<JUCERPROJECT name="SynthDecibelLevelControlTutorial" companyName="JUCE" version="1.0.0"
-              userNotes="Synthesiser with level control in dB." companyWebsite="http://juce.com"
+<JUCERPROJECT name="SynthUsingMidiInputTutorial" companyName="JUCE" version="1.0.0"
+              userNotes="Synthesiser with midi input." companyWebsite="http://juce.com"
               projectType="guiapp" useAppConfig="0" addUsingNamespaceToJuceHeader="1"
-              id="XscZ4w" jucerFormatVersion="1">
-  <MAINGROUP id="CkI0Jg" name="SynthDecibelLevelControlTutorial">
-    <GROUP id="{005FDB7B-BB5B-7207-9E81-27183C548E3C}" name="Source">
-      <FILE id="mcpUfJ" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
-      <FILE id="MaJ4m9" name="SynthDecibelLevelControlTutorial.h" compile="0"
-            resource="0" file="Source/SynthDecibelLevelControlTutorial.h"/>
+              id="unbezJ" jucerFormatVersion="1">
+  <MAINGROUP id="WUvvkt" name="SynthUsingMidiInputTutorial">
+    <GROUP id="{C8A523EE-BCE2-65BC-ED81-D6A01FC101B4}" name="Source">
+      <FILE id="r326aO" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+      <FILE id="XKK1XO" name="SynthUsingMidiInputTutorial_01.h" compile="0"
+            resource="0" file="Source/SynthUsingMidiInputTutorial_01.h"/>
     </GROUP>
   </MAINGROUP>
   <MODULES>
@@ -27,8 +27,8 @@
   <EXPORTFORMATS>
     <XCODE_MAC targetFolder="Builds/MacOSX">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthDecibelLevelControlTutorial"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthDecibelLevelControlTutorial"/>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthUsingMidiInputTutorial"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthUsingMidiInputTutorial"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path=""/>
@@ -46,8 +46,8 @@
     </XCODE_MAC>
     <VS2019 targetFolder="Builds/VisualStudio2019">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthDecibelLevelControlTutorial"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthDecibelLevelControlTutorial"/>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthUsingMidiInputTutorial"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthUsingMidiInputTutorial"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path=""/>
@@ -65,8 +65,8 @@
     </VS2019>
     <LINUX_MAKE targetFolder="Builds/LinuxMakefile">
       <CONFIGURATIONS>
-        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthDecibelLevelControlTutorial"/>
-        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthDecibelLevelControlTutorial"/>
+        <CONFIGURATION name="Debug" isDebug="1" optimisation="1" targetName="SynthUsingMidiInputTutorial"/>
+        <CONFIGURATION name="Release" isDebug="0" optimisation="3" targetName="SynthUsingMidiInputTutorial"/>
       </CONFIGURATIONS>
       <MODULEPATHS>
         <MODULEPATH id="juce_audio_basics" path=""/>
