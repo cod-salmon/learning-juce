@@ -7,7 +7,7 @@
 */
 
 #include <JuceHeader.h>
-#include "DSPIntroductionTutorial_01.h"
+#include "DSPIntroductionTutorial_02.h"
 
 //==============================================================================
 juce::AudioProcessor* JUCE_CALLTYPE createPluginFilter()

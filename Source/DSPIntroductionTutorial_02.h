@@ -188,8 +188,8 @@ public:
             {
                 lfoUpdateCounter = lfoUpdateRate;
                 auto lfoOut = lfo.processSample (0.0f);                                 // [5]
-                auto curoffFreqHz = juce::jmap (lfoOut, -1.0f, 1.0f, 100.0f, 2000.0f);  // [6]
-                processorChain.get<filterIndex>().setCutoffFrequencyHz (curoffFreqHz);  // [7]
+                auto cutoffFreqHz = juce::jmap (lfoOut, -1.0f, 1.0f, 100.0f, 2000.0f);  // [6]
+                processorChain.get<filterIndex>().setCutoffFrequencyHz (cutoffFreqHz);  // [7]
             }
         }
 
@@ -432,20 +432,38 @@ private:
     //==============================================================================
     void timerCallback() override
     {
+        // Remove sampleData.data() from the audioBufferQueue
         audioBufferQueue.pop (sampleData.data());
+        // Copy sampleData.data() into spectrumData.data()
         juce::FloatVectorOperations::copy (spectrumData.data(), sampleData.data(), (int) sampleData.size());
 
         auto fftSize = (size_t) fft.getSize();
 
         jassert (spectrumData.size() == 2 * fftSize);
+        // Scales the component window
         windowFun.multiplyWithWindowingTable (spectrumData.data(), fftSize);
+        // Take  ¡spectrumData.data() and simply transform it to the magnitude frequency response spectrum. 
         fft.performFrequencyOnlyForwardTransform (spectrumData.data());
 
         static constexpr auto mindB = SampleType (-160);
         static constexpr auto maxdB = SampleType (0);
 
+        
         for (auto& s : spectrumData)
-            s = juce::jmap (juce::jlimit (mindB, maxdB, juce::Decibels::gainToDecibels (s) - juce::Decibels::gainToDecibels (SampleType (fftSize))), mindB, maxdB, SampleType (0), SampleType (1));
+            s = juce::jmap (
+                /*Checks that the difference
+                
+                juce::Decibels::gainToDecibels (s) - juce::Decibels::gainToDecibels (SampleType (fftSize))
+                
+                lies in the range mindB and maxdB
+                */
+                juce::jlimit (mindB, maxdB, juce::Decibels::gainToDecibels (s) - juce::Decibels::gainToDecibels (SampleType (fftSize))), 
+                /* Source range */
+                mindB, maxdB, 
+                /* Target range */
+                SampleType (0), SampleType (1)
+            );
+            // Remaps a value from a source range to a target range. 
 
         repaint();
     }
